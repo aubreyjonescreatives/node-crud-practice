@@ -2,7 +2,7 @@ import {Router} from 'express'
 
 export const productRouter = Router()
 
-import { postAddProduct, getAllProducts, getProducts, getProductById, postEditProduct } from '../controllers/product.controller.js'
+import { postAddProduct, getAllProducts, getProducts, getProductById, putEditProduct } from '../controllers/product.controller.js'
 import { Product } from '../models/product.js'
 
 productRouter.post('/', postAddProduct)
@@ -14,4 +14,4 @@ productRouter.get('/async', getProducts)
 productRouter.get('/id', getProductById)
 
 
-productRouter.put('/update', postEditProduct)
+productRouter.put('/update', putEditProduct)

@@ -44,7 +44,7 @@ export const getProductById = async (req, res) => {
 }
 }
 
-export const postEditProduct = async (req, res) => {
+export const putEditProduct = async (req, res) => {
     const prodId = req.body.productId
     const updatedObj = {
         title: req.body.title, 
