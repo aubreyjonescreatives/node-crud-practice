@@ -14,4 +14,4 @@ productRouter.get('/async', getProducts)
 productRouter.get('/id', getProductById)
 
 
-productRouter.post('/update', postEditProduct)
+productRouter.put('/update', postEditProduct)
