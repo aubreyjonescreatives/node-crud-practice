@@ -5,6 +5,8 @@ import { productRouter} from './routes/product.route.js'
 import mongoose from 'mongoose'
 import * as dotenv from 'dotenv'
 
+mongoose.set('useFindAndModify', false)
+
 dotenv.config()
 
 const port = process.env.PORT || 5000 
