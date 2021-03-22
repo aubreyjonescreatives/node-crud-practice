@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 
 const cardSchema = new Schema({
     code: {
-        type: Number, 
+        type: String, 
         required: true
     }, 
     image: {
@@ -14,7 +14,7 @@ const cardSchema = new Schema({
         required: true
     }, 
     value: {
-        type: Number, 
+        type: String, 
         required: true 
     }, 
     suit: {
