@@ -69,7 +69,7 @@ export const deleteCard = async (req, res) => {
                return res.status(400).json({Message: `Product to Delete Not Found.`})
             }
             console.log(`Deleted the product ${deletedCard}`)
-            res.redirect(`/product`)
+            res.redirect(`/card`)
         } catch (err) {
             res.status(400).json({Message: `Invalid ID: ${err}`})
         }

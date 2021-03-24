@@ -14,7 +14,7 @@ const seedMongo = async () => {
 
     const options = {
         method: 'GET', 
-        url: 'https://deckofcardsapi.com/api/deck/new/draw/?count=25', 
+        url: 'https://deckofcardsapi.com/api/deck/new/draw/?count=52', 
       //  params: {}, 
       //  headers: {'access-token': process.env.SUPERHERO_API_KEY}
     } 
