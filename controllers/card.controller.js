@@ -45,12 +45,12 @@ export const getCardById = async (req, res) => {
 }
 
 export const putEditCard = async (req, res) => {
-    const cardId = req.body._id
+    const cardId = req.body.data._id
     const updatedObj = {
-        code: req.body.code,
-        image: req.body.image, 
-        value: req.body.value, 
-        suit: req.body.suit 
+        code: req.body.data.code,
+        image: req.body.data.image, 
+        value: req.body.data.value, 
+        suit: req.body.data.suit 
     } 
     try {
     const card = await Card.findByIdAndUpdate(cardId, updatedObj, {new: true})
