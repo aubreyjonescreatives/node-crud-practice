@@ -1,5 +1,5 @@
 import express from 'express'
-import bodyParser from 'body-parser'
+//import bodyParser from 'body-parser'
 import { apiRouter} from './routes/api.route.js'
 import { productRouter} from './routes/product.route.js'
 import { cardRouter } from './routes/card.route.js'
@@ -19,7 +19,7 @@ const app = express()
 
 app.use(cors())
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: false}))
 
 app.use(express.json())
 
