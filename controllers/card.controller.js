@@ -5,7 +5,7 @@ import { Card } from '../models/card.js'
 export const addCard = ((req, res) => {
 
 const cards = new Card({
-    code: req.body._id, 
+    code: req.body.code, 
     image: req.body.image, 
     value: req.body.value, 
     suit: req.body.suit 
