@@ -5,16 +5,23 @@ import { productRouter} from './routes/product.route.js'
 import { cardRouter } from './routes/card.route.js'
 import mongoose from 'mongoose'
 import * as dotenv from 'dotenv'
+import cors from 'cors'
 
 mongoose.set('useFindAndModify', false)
 
 dotenv.config()
 
+
+
 const port = process.env.PORT || 5000 
 
 const app = express()
 
+app.use(cors())
+
 app.use(bodyParser.urlencoded({extended: false}))
+
+app.use(express.json())
 
 app.use(express.static('public'))
 

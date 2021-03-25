@@ -5,7 +5,7 @@ import { Card } from '../models/card.js'
 export const addCard = ((req, res) => {
 
 const cards = new Card({
-    code: req.body.code, 
+    code: req.body._id, 
     image: req.body.image, 
     value: req.body.value, 
     suit: req.body.suit 
@@ -31,12 +31,12 @@ export const getCards = async (req, res) => {
 }
 
 export const getCardById = async (req, res) => {
-    const cardId = req.body.code
+    const cardId = req.body._id
     console.log(cardId)
     try{
-    const card = await Card.findById(prodId)
+    const card = await Card.findById(cardId)
     if (!card) {
-        return res.status(404).json({Message: 'Product Not Found'})
+        return res.status(404).json({Message: 'Card Not Found'})
     }
     res.json(card)
 } catch(err) {
@@ -45,8 +45,9 @@ export const getCardById = async (req, res) => {
 }
 
 export const putEditCard = async (req, res) => {
-    const cardId = req.body.code
+    const cardId = req.body._id
     const updatedObj = {
+        code: req.body.code,
         image: req.body.image, 
         value: req.body.value, 
         suit: req.body.suit 
@@ -62,14 +63,15 @@ export const putEditCard = async (req, res) => {
 }
 
 export const deleteCard = async (req, res) => {
-    const cardId = req.body.code 
+    const cardId = req.body.cardId
+    console.log(cardId)
     try {
         const deletedCard = await Card.findByIdAndRemove(cardId)
             if (!deletedCard) {
-               return res.status(400).json({Message: `Product to Delete Not Found.`})
+               return res.status(400).json({Message: `Card to Delete Not Found.`})
             }
             console.log(`Deleted the product ${deletedCard}`)
-            res.redirect(`/card`)
+            res.sendStatus(200)
         } catch (err) {
             res.status(400).json({Message: `Invalid ID: ${err}`})
         }
